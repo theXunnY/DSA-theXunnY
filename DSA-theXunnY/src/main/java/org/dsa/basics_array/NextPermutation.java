@@ -16,11 +16,11 @@ public class NextPermutation {
     private static int[] find(int[] arr) {
         //find the pivot
         int i= arr.length-2;
-       while (i>=0 && arr[i] >= arr[i+1]){
-           i--;
-       }
+        while (i>=0 && arr[i] >= arr[i+1]){
+            i--;
+         }
 
-       //find the value greater than the pivot index
+         //find the value greater than the pivot index
         if(i>=0){
             int j = arr.length-1;
             while(j>=0 && arr[i] >= arr[j]){
@@ -43,7 +43,7 @@ public class NextPermutation {
             start++;
             end--;
         }
-    return arr;
+          return arr;
     }
 }
 /***
