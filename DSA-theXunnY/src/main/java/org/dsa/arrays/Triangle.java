@@ -30,28 +30,26 @@ import java.util.List;
 public class Triangle {
     public static void main(String[] args) {
         List<List<Integer>> triangle = new ArrayList<>();
-        triangle.add(Arrays.asList(2));
-        triangle.add(Arrays.asList(3, 4));
-        triangle.add(Arrays.asList(6, 5, 7));
+             triangle.add(Arrays.asList(2));
+           triangle.add(Arrays.asList(3, 4));
+          triangle.add(Arrays.asList(6, 5, 7));
         triangle.add(Arrays.asList(4, 1, 8, 3));
         System.out.println(minimumTotal(triangle));
     }
 
     public static int minimumTotal(List<List<Integer>> triangle) {
-        int n = triangle.size();
-        int[] nums = new int[n];
+       int n=triangle.size();
+       int[] nums = new int[n];
 
-        //initialize our array with the last row of the triangle
         for (int i = 0; i < n; i++) {
-            nums[i] = triangle.get(n - 1).get(i);
+            nums[i] = triangle.get(n-1).get(i);
         }
 
-        for (int row = n - 2; row >= 0; row--) {
-            for (int col = 0; col <= row; col++) {
-                nums[col] = triangle.get(row).get(col) + Math.min(nums[col], nums[col + 1]);
+        for (int row = n-2; row >=0 ; row--) {
+            for (int col = 0; col <=row ; col++) {
+                nums[col] = triangle.get(row).get(col) + Math.min(nums[col], nums[col+1]);
             }
         }
-
         return nums[0];
     }
 }
